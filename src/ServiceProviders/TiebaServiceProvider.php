@@ -10,16 +10,14 @@ namespace Yi\Baidu\ServiceProviders;
 
 use Pimple\Container;
 use Pimple\ServiceProviderInterface;
-use Yi\Baidu\User;
+use Yi\Baidu\TiebaFactory;
 
-class UserServiceProvider implements ServiceProviderInterface
+class TiebaServiceProvider implements ServiceProviderInterface
 {
     public function register(Container $pimple)
     {
-        $pimple['user'] = function ($pimple) {
-            $config = $pimple['config'];
-
-            return new User($config->bduss, $config->nickname);
+        $pimple['tieba'] = function ($pimple) {
+            return new TiebaFactory();
         };
     }
 

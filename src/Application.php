@@ -23,7 +23,8 @@ class Application extends Container
      * @var array
      */
     protected $providers = [
-        ServiceProviders\UserServiceProvider::class
+        ServiceProviders\UserServiceProvider::class,
+        ServiceProviders\TiebaServiceProvider::class,
     ];
 
     /**
