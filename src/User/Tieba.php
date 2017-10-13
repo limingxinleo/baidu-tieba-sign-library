@@ -14,6 +14,8 @@ use Yi\Baidu\Utils\Curl;
 /**
  * Class Tieba
  * @package Yi\Baidu\User
+ * @property User                  $user
+ * @property \Yi\Baidu\Tieba\Tieba $tieba
  */
 class Tieba
 {

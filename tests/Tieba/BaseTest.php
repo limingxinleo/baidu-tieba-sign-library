@@ -33,6 +33,7 @@ class BaseTest extends TestCase
         ]);
         $res = $client->user->tieba('上海')->sign();
         $this->assertTrue($res['no'] === 0 || $res['no'] === 1101);
+
     }
 
     public function testTiebas()
@@ -47,6 +48,7 @@ class BaseTest extends TestCase
         $result = $client->user->flushTiebas();
         $this->assertTrue(count($result) > 0);
         foreach ($result as $item) {
+
             $res = $item->sign();
             $this->assertTrue($res['no'] === 0 || $res['no'] === 1101);
         }

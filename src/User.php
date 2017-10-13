@@ -15,6 +15,7 @@ use Yi\Baidu\Utils\Curl;
 /**
  * Class User
  * @package Yi\Baidu
+ * @property array $tiebas
  */
 class User
 {
