@@ -38,7 +38,7 @@ class BaseTest extends TestCase
     public function testTiebas()
     {
         $bduss = file_get_contents('bduss');
-
+        $nickname = file_get_contents('nickname');
         $client = new Application([
             'bduss' => $bduss,
             'nickname' => '桃园丶龙玉箫'
