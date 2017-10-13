@@ -41,7 +41,7 @@ class BaseTest extends TestCase
         $nickname = file_get_contents('nickname');
         $client = new Application([
             'bduss' => $bduss,
-            'nickname' => '桃园丶龙玉箫'
+            'nickname' => $nickname
         ]);
 
         $result = $client->user->flushTiebas();
@@ -55,9 +55,14 @@ class BaseTest extends TestCase
     public function testExample()
     {
         $bduss = file_get_contents('bduss');
+        $nickname = file_get_contents('nickname');
+
         $client = new Application([
             'bduss' => $bduss,
+            'nickname' => $nickname
         ]);
+
+        // print_r($client->user->tiebas);
     }
 
 }

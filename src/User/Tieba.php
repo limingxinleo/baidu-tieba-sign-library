@@ -11,6 +11,10 @@ namespace Yi\Baidu\User;
 use Yi\Baidu\User;
 use Yi\Baidu\Utils\Curl;
 
+/**
+ * Class Tieba
+ * @package Yi\Baidu\User
+ */
 class Tieba
 {
     public $user;

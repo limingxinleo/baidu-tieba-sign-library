@@ -12,13 +12,17 @@ use Yi\Baidu\Exceptions\TiebaException;
 use Yi\Baidu\User\Tieba;
 use Yi\Baidu\Utils\Curl;
 
+/**
+ * Class User
+ * @package Yi\Baidu
+ */
 class User
 {
     public $bdUss;
 
     public $nickName;
 
-    public static $tiebas;
+    public $tiebas = [];
 
     public function __construct($bdUss, $nickName = null)
     {
@@ -34,13 +38,13 @@ class User
      */
     public function tieba($name, $fid = null)
     {
-        if (isset(static::$tiebas[$name]) && static::$tiebas[$name] instanceof Tieba) {
-            return static::$tiebas[$name];
+        if (isset($this->tiebas[$name]) && $this->tiebas[$name] instanceof Tieba) {
+            return $this->tiebas[$name];
         }
 
         $tieba = TiebaFactory::instance($name, $fid);
 
-        return static::$tiebas[$name] = new Tieba($this, $tieba);
+        return $this->tiebas[$name] = new Tieba($this, $tieba);
     }
 
     /**
@@ -116,10 +120,10 @@ class User
                 $result[$name] = new Tieba($this, $tieba, $item);
             }
 
-            return static::$tiebas = $result;
+            return $this->tiebas = $result;
         }
 
-        return static::$tiebas = [];
+        return $this->tiebas = [];
     }
 
 

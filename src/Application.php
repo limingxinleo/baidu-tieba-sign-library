@@ -13,7 +13,9 @@ use Pimple\Container;
 /**
  * Class Application
  * @package limx\Github
- * @property Config $config
+ * @property Config      $config
+ * @property User        $user
+ * @property Tieba\Tieba $tieba
  */
 class Application extends Container
 {
