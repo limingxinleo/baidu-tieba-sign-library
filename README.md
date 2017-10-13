@@ -25,3 +25,9 @@ foreach ($result as $item) {
     $this->assertTrue($res['no'] === 0 || $res['no'] === 1101);
 }
 ~~~
+
+## 配置
+~~~
+bduss: 登录百度贴吧网页，打开F12，从cookies中找到BDUSS
+nickname：就是你的昵称
+~~~
