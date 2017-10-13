@@ -46,9 +46,11 @@ class BaseTest extends TestCase
         ]);
 
         $result = $client->user->flushTiebas();
-        $this->assertTrue(count($result) > 0);
-        foreach ($result as $item) {
 
+        $this->assertTrue(count($result) > 0);
+
+        /** @var User\Tieba $item */
+        foreach ($result as $item) {
             $res = $item->sign();
             $this->assertTrue($res['no'] === 0 || $res['no'] === 1101);
         }
