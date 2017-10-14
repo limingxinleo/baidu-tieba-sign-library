@@ -15,7 +15,7 @@ use Yi\Baidu\Utils\Curl;
 /**
  * Class User
  * @package Yi\Baidu
- * @property array $tiebas
+ * @property Tieba[] $tiebas
  */
 class User
 {
@@ -68,6 +68,7 @@ class User
     /**
      * @desc   获取贴吧
      * @author limx
+     * @return Tieba[] $tiebas
      */
     public function flushTiebas()
     {
